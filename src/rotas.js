@@ -1,5 +1,6 @@
 const express = require('express');
 const cadastrarCompra = require('./controladores/compras/cadastrarCompra');
+const listarCompras = require('./controladores/compras/listarCompras');
 const login = require('./controladores/login');
 const atualizarProduto = require('./controladores/produtos/atualizarProduto');
 const cadastarProduto = require('./controladores/produtos/cadastrarProduto');
@@ -21,6 +22,8 @@ rotas.post('/produtos', cadastarProduto);
 rotas.put('/produtos/:id', atualizarProduto);
 rotas.get('/produtos', listarProdutos);
 rotas.delete('/produtos/:id', excluirProduto);
+
+rotas.get('/compras', listarCompras);
 
 rotas.use(verificaLogin)
 
