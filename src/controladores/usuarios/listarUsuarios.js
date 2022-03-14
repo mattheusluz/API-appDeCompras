@@ -2,7 +2,7 @@ const knex = require('../../conexao');
 
 const listarUsuarios = async (req, res) => {
   try {
-    const usuarios = await knex('usuarios');
+    const usuarios = await knex('usuarios').orderBy('id', 'asc');
 
     if (!usuarios) {
       return res.status(400).json({ erro: 'não foi possivel listar os usuarios.' });

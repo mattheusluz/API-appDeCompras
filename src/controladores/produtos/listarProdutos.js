@@ -2,7 +2,7 @@ const knex = require('../../conexao');
 
 const listarProdutos = async (req, res) => {
   try {
-    const produtos = await knex('produtos');
+    const produtos = await knex('produtos').orderBy('id', 'asc');
 
     if (!produtos) {
       return res.status(400).json({ erro: 'não foi possivel listar os produtos' });
