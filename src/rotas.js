@@ -1,4 +1,5 @@
 const express = require('express');
+const cadastrarCompra = require('./controladores/compras/cadastrarCompra');
 const login = require('./controladores/login');
 const atualizarProduto = require('./controladores/produtos/atualizarProduto');
 const cadastarProduto = require('./controladores/produtos/cadastrarProduto');
@@ -25,5 +26,7 @@ rotas.use(verificaLogin)
 
 rotas.put('/usuarios', atualizarUsuario);
 rotas.delete('/usuarios', excluirUsuario);
+
+rotas.post('/compras', cadastrarCompra);
 
 module.exports = rotas;
