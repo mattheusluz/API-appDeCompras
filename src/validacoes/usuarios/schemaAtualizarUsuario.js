@@ -1,4 +1,4 @@
-const yup = require('./configuracoes');
+const yup = require('../configuracoes');
 
 const schemaAtualizarUsuario = yup.object().shape({
   nome: yup.string().required(),

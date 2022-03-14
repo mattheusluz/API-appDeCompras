@@ -1,5 +1,6 @@
 const express = require('express');
 const login = require('./controladores/login');
+const cadastarProduto = require('./controladores/produtos/cadastrarProduto');
 const atualizarUsuario = require('./controladores/usuarios/atualizarUsuario');
 const cadastrarUsuario = require('./controladores/usuarios/cadastrarUsuarios');
 const excluirUsuario = require('./controladores/usuarios/excluirUsuario');
@@ -11,6 +12,8 @@ const rotas = express();
 rotas.post('/usuarios', cadastrarUsuario);
 rotas.get('/usuarios', listarUsuarios);
 rotas.post('/login', login);
+
+rotas.post('/produtos', cadastarProduto);
 
 rotas.use(verificaLogin)
 

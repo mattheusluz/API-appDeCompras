@@ -1,6 +1,6 @@
 const knex = require('../../conexao');
 const bcrypt = require('bcrypt');
-const schemaCadastrarUsuario = require("../../validacoes/schemaCadastrarUsuarios");
+const schemaCadastrarUsuario = require("../../validacoes/usuarios/schemaCadastrarUsuarios");
 
 const cadastrarUsuario = async (req, res) => {
   const { nome, email, senha } = req.body;
