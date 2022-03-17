@@ -4,7 +4,7 @@ const detalharProduto = async (req, res) => {
   const { id } = req.params;
 
   try {
-    const produto = await knex('produtos').where({ id });
+    const produto = await knex('produtos').where({ id }).first();
 
     if (!produto) {
       return res.status(400).json({ erro: 'não foi possivel detalhar o produto.' });
