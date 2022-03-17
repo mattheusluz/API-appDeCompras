@@ -2,13 +2,13 @@ const knex = require('../../conexao');
 const schemaAtualizarProduto = require('../../validacoes/produtos/schemaAtualizarProduto');
 
 const atualizarProduto = async (req, res) => {
-  const { nome, descricao, quantidade_em_estoque } = req.body;
+  const { nome, descricao, quantidade_em_estoque, imagem } = req.body;
   const { id } = req.params;
 
   try {
     await schemaAtualizarProduto.validate(req.body);
 
-    const produto = await knex('produtos').update({ nome, descricao, quantidade_em_estoque }).where({ id });
+    const produto = await knex('produtos').update({ nome, descricao, quantidade_em_estoque, imagem }).where({ id });
 
     if (!produto) {
       return res.status(400).json({ erro: 'produto não encontrado.' });
