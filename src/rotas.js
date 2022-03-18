@@ -10,6 +10,7 @@ const excluirProduto = require('./controladores/produtos/excluirProduto');
 const listarProdutos = require('./controladores/produtos/listarProdutos');
 const atualizarUsuario = require('./controladores/usuarios/atualizarUsuario');
 const cadastrarUsuario = require('./controladores/usuarios/cadastrarUsuarios');
+const detalharUsuario = require('./controladores/usuarios/detalharUsuario');
 const excluirUsuario = require('./controladores/usuarios/excluirUsuario');
 const listarUsuarios = require('./controladores/usuarios/listarUsuarios');
 const verificaLogin = require('./filtros/verificaLogin');
@@ -30,6 +31,7 @@ rotas.get('/compras', listarCompras);
 
 rotas.use(verificaLogin)
 
+rotas.get('/usuario', detalharUsuario);
 rotas.put('/usuarios', atualizarUsuario);
 rotas.delete('/usuarios', excluirUsuario);
 
